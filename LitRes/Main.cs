@@ -19,7 +19,22 @@ namespace LitRes
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            Form formGenre = new FormBooks();
+            formGenre.Show();
 
+            FormBooks genre = new FormBooks();
+            genre.Show();
+            this.Hide();
+        }
+
+        private void ButtonAmin_Click(object sender, EventArgs e)
+        {
+            Form formAuthorization = new FormAuthorization();
+            formAuthorization.Show();
+
+            FormAuthorization authorization = new FormAuthorization();
+            authorization.Show();
+            this.Hide();
         }
     }
 }

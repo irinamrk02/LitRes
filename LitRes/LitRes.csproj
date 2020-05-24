@@ -61,6 +61,48 @@
     <Compile Include="ClientSet.cs">
       <DependentUpon>ModelLitRes.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAuthorization.Designer.cs">
+      <DependentUpon>FormAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookSet.Designer.cs">
+      <DependentUpon>FormBookSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientSet.Designer.cs">
+      <DependentUpon>FormClientSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBooks.Designer.cs">
+      <DependentUpon>FormBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuy.Designer.cs">
+      <DependentUpon>FormBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrderSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrderSet.Designer.cs">
+      <DependentUpon>FormOrderSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +132,27 @@
     <Compile Include="Users.cs">
       <DependentUpon>ModelLitRes.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAuthorization.resx">
+      <DependentUpon>FormAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookSet.resx">
+      <DependentUpon>FormBookSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientSet.resx">
+      <DependentUpon>FormClientSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBooks.resx">
+      <DependentUpon>FormBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuy.resx">
+      <DependentUpon>FormBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrderSet.resx">
+      <DependentUpon>FormOrderSet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +194,9 @@
     <None Include="Resources\litres_logo_rastr.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\litres-ru-logo-on-orange-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ModelLitRes.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelLitRes.edmx</DependentUpon>
@@ -141,7 +207,6 @@
       <DependentUpon>ModelLitRes.edmx</DependentUpon>
       <LastGenOutput>ModelLitRes.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\litres-ru-logo-on-orange-bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

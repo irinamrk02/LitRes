@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2d6fe0a75f9a4e42b8bc4137cb32cf12" Name="Diagram1">
-        <EntityTypeShape EntityType="LitResModel.BookSet" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LitResModel.ClientSet" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LitResModel.OrderSet" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LitResModel.Users" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+      <Diagram DiagramId="a44169861302485a989d654d17d70ca4" Name="Diagram1">
+        <EntityTypeShape EntityType="LitResModel.BookSet" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LitResModel.ClientSet" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LitResModel.OrderSet" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LitResModel.Users" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="LitResModel.FK_ClientSet_BookSet" ManuallyRouted="false" />
         <AssociationConnector Association="LitResModel.FK_OrderSet_ClientSet" ManuallyRouted="false" />
       </Diagram>

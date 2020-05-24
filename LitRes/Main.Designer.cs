@@ -29,21 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonClient = new System.Windows.Forms.Button();
             this.buttonAmin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LitRes.Properties.Resources.litres_logo_rastr;
-            this.pictureBox1.Location = new System.Drawing.Point(-37, -13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(494, 174);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // buttonClient
             // 
@@ -69,6 +59,17 @@
             this.buttonAmin.TabIndex = 2;
             this.buttonAmin.Text = "Администратор";
             this.buttonAmin.UseVisualStyleBackColor = false;
+            this.buttonAmin.Click += new System.EventHandler(this.ButtonAmin_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LitRes.Properties.Resources.litres_logo_rastr;
+            this.pictureBox1.Location = new System.Drawing.Point(-37, -13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(494, 174);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -82,6 +83,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ЛитРес";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -13,7 +13,7 @@
           <Property Name="Title" Type="nvarchar(max)" />
           <Property Name="Author" Type="nvarchar(max)" />
           <Property Name="Price" Type="int" Nullable="false" />
-          <Property Name="Genre" Type="nvarchar(max)" />
+          <Property Name="Genre" Type="int" />
         </EntityType>
         <EntityType Name="ClientSet">
           <Key>
@@ -94,7 +94,7 @@
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Int32" Nullable="false" />
-          <Property Name="Genre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Genre" Type="Int32" />
           <NavigationProperty Name="ClientSet" Relationship="Self.FK_ClientSet_BookSet" FromRole="BookSet" ToRole="ClientSet" />
         </EntityType>
         <EntityType Name="ClientSet">
