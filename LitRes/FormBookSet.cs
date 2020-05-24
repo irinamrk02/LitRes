@@ -23,7 +23,7 @@ namespace LitRes
         {
             listViewClassic.Items.Clear();
             listViewPsychology.Items.Clear();
-            listViewFantasy.Items.Clear();
+            listViewFantastic.Items.Clear();
 
             foreach (BookSet book in Program.litRes.BookSet)
             {
@@ -52,11 +52,11 @@ namespace LitRes
                         book.Title, book.Author, book.Price.ToString()
                     });
                     item.Tag = book;
-                    listViewFantasy.Items.Add(item);
+                    listViewFantastic.Items.Add(item);
                 }
                 listViewClassic.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 listViewPsychology.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-                listViewFantasy.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                listViewFantastic.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
         private void Label1_Click(object sender, EventArgs e)
@@ -70,9 +70,9 @@ namespace LitRes
             if (comboBoxGenre.SelectedIndex == 0)
             {
                 listViewClassic.Visible = true;
-
+                
                 listViewPsychology.Visible = false;
-                listViewFantasy.Visible = false;
+                listViewFantastic.Visible = false;
 
                 textBoxTitle.Text = "";
                 textBoxAuthor.Text = "";
@@ -85,7 +85,7 @@ namespace LitRes
                 listViewPsychology.Visible = true;
                 
                 listViewClassic.Visible = false;
-                listViewFantasy.Visible = false;
+                listViewFantastic.Visible = false;
 
                 textBoxTitle.Text = "";
                 textBoxAuthor.Text = "";
@@ -95,8 +95,8 @@ namespace LitRes
             //фантастика
             else if (comboBoxGenre.SelectedIndex == 2)
             {
-                listViewFantasy.Visible = true;
-                
+                listViewFantastic.Visible = true;
+               
                 listViewClassic.Visible = false;
                 listViewPsychology.Visible = false;
 
@@ -125,7 +125,7 @@ namespace LitRes
 
         private void ListViewPsychology_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listViewClassic.SelectedItems.Count == 1)
+            if (listViewPsychology.SelectedItems.Count == 1)
             {
                 BookSet book = listViewPsychology.SelectedItems[0].Tag as BookSet;
                 textBoxTitle.Text = book.Title;
@@ -140,39 +140,38 @@ namespace LitRes
             }
         }
 
-        private void ListViewFantasy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listViewClassic.SelectedItems.Count == 1)
-            {
-                BookSet book = listViewFantasy.SelectedItems[0].Tag as BookSet;
-                textBoxTitle.Text = book.Title;
-                textBoxAuthor.Text = book.Author;
-                textBoxPrice.Text = book.Price.ToString();
-            }
-            else
-            {
-                textBoxTitle.Text = "";
-                textBoxAuthor.Text = "";
-                textBoxPrice.Text = "";
-            }
-        }
-
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (textBoxPrice.Text != "" && textBoxTitle.Text != "")
             {
-
                 BookSet book = new BookSet();
+
                 book.Title = textBoxTitle.Text;
                 book.Author = textBoxAuthor.Text;
                 book.Price = Convert.ToInt32(textBoxPrice.Text);
+
+                if (comboBoxGenre.SelectedIndex == 0)
+                {
+                    book.Genre = 0;
+                   
+                }
+                else if (comboBoxGenre.SelectedIndex == 1)
+                {
+                    book.Genre = 1;
+                    
+                }
+                else if (comboBoxGenre.SelectedIndex == 2)
+                {
+                    book.Genre = 2;
+                    
+                }
 
                 Program.litRes.BookSet.Add(book);
                 Program.litRes.SaveChanges();
                 ShowBookSet();
             }
-            catch (Exception ex)
-            { MessageBox.Show("" + ex.Message, "Ошибка", 
+            else
+            { MessageBox.Show("Заполните обязательные поля!", "Ошибка", 
                 MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
@@ -180,19 +179,34 @@ namespace LitRes
         {
             try
             {
+                if (textBoxTitle.Text != "" && textBoxPrice.Text != "")
+                {
+                    throw new Exception("Заполните обязательные поля!");
+                }
+
                 BookSet book = new BookSet();
                 book.Title = textBoxTitle.Text;
                 book.Author = textBoxAuthor.Text;
                 book.Price = Convert.ToInt32(textBoxPrice.Text);
 
+                if (comboBoxGenre.SelectedIndex == 0)
+                {
+                    book.Genre = 0;
+                }
+                else if (comboBoxGenre.SelectedIndex == 1)
+                {
+                    book.Genre = 1;
+                }
+                else if (comboBoxGenre.SelectedIndex == 2)
+                {
+                    book.Genre = 2;
+                }
+
                 Program.litRes.SaveChanges();
                 ShowBookSet();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex.Message, "Ошибка",
-                  MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show("" + ex.Message, "Внимание",
+                MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void ButtonDel_Click(object sender, EventArgs e)
@@ -227,9 +241,9 @@ namespace LitRes
                 }
                 else if (comboBoxGenre.SelectedIndex == 2)
                 {
-                    if (listViewFantasy.SelectedItems.Count == 1)
+                    if (listViewFantastic.SelectedItems.Count == 1)
                     {
-                        BookSet book = listViewFantasy.SelectedItems[0].Tag as BookSet;
+                        BookSet book = listViewFantastic.SelectedItems[0].Tag as BookSet;
                         Program.litRes.BookSet.Remove(book);
                         Program.litRes.SaveChanges();
                         ShowBookSet();
@@ -257,6 +271,23 @@ namespace LitRes
             if (!Char.IsDigit(number) && number != 8 && number != 44 && number != 45)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void ListViewFantastic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewFantastic.SelectedItems.Count == 1)
+            {
+                BookSet book = listViewFantastic.SelectedItems[0].Tag as BookSet;
+                textBoxTitle.Text = book.Title;
+                textBoxAuthor.Text = book.Author;
+                textBoxPrice.Text = book.Price.ToString();
+            }
+            else
+            {
+                textBoxTitle.Text = "";
+                textBoxAuthor.Text = "";
+                textBoxPrice.Text = "";
             }
         }
     }

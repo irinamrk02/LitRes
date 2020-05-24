@@ -58,6 +58,7 @@
             this.buttonBooks.TabIndex = 7;
             this.buttonBooks.Text = "Книги";
             this.buttonBooks.UseVisualStyleBackColor = false;
+            this.buttonBooks.Click += new System.EventHandler(this.ButtonBooks_Click);
             // 
             // buttonClients
             // 
@@ -70,6 +71,7 @@
             this.buttonClients.TabIndex = 8;
             this.buttonClients.Text = "Клиенты";
             this.buttonClients.UseVisualStyleBackColor = false;
+            this.buttonClients.Click += new System.EventHandler(this.ButtonClients_Click);
             // 
             // buttonOrders
             // 
@@ -82,6 +84,7 @@
             this.buttonOrders.TabIndex = 9;
             this.buttonOrders.Text = "Заказы";
             this.buttonOrders.UseVisualStyleBackColor = false;
+            this.buttonOrders.Click += new System.EventHandler(this.ButtonOrders_Click);
             // 
             // FormMenu
             // 

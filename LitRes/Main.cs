@@ -29,9 +29,6 @@ namespace LitRes
 
         private void ButtonAmin_Click(object sender, EventArgs e)
         {
-            Form formAuthorization = new FormAuthorization();
-            formAuthorization.Show();
-
             FormAuthorization authorization = new FormAuthorization();
             authorization.Show();
             this.Hide();

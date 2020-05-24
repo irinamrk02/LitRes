@@ -21,5 +21,23 @@ namespace LitRes
         {
 
         }
+
+        private void ButtonBooks_Click(object sender, EventArgs e)
+        {
+            Form formBook = new FormBookSet();
+            formBook.Show();
+        }
+
+        private void ButtonClients_Click(object sender, EventArgs e)
+        {
+            Form formClient = new FormClientSet();
+            formClient.Show();
+        }
+
+        private void ButtonOrders_Click(object sender, EventArgs e)
+        {
+            Form formOrder = new FormOrderSet();
+            formOrder.Show();
+        }
     }
 }
