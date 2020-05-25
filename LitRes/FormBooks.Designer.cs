@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBooks));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxGenre = new System.Windows.Forms.ComboBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonBuy = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,17 +56,18 @@
             this.comboBoxGenre.Size = new System.Drawing.Size(299, 32);
             this.comboBoxGenre.TabIndex = 10;
             // 
-            // buttonAdd
+            // buttonBuy
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.OrangeRed;
-            this.buttonAdd.Font = new System.Drawing.Font("Roboto Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdd.Location = new System.Drawing.Point(276, 536);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(160, 54);
-            this.buttonAdd.TabIndex = 11;
-            this.buttonAdd.Text = "Купить";
-            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonBuy.BackColor = System.Drawing.Color.OrangeRed;
+            this.buttonBuy.Font = new System.Drawing.Font("Roboto Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBuy.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonBuy.Location = new System.Drawing.Point(276, 536);
+            this.buttonBuy.Name = "buttonBuy";
+            this.buttonBuy.Size = new System.Drawing.Size(160, 54);
+            this.buttonBuy.TabIndex = 11;
+            this.buttonBuy.Text = "Купить";
+            this.buttonBuy.UseVisualStyleBackColor = false;
+            this.buttonBuy.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // pictureBox1
             // 
@@ -94,7 +95,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(452, 603);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonBuy);
             this.Controls.Add(this.comboBoxGenre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -113,7 +114,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxGenre;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonBuy;
         private System.Windows.Forms.ListBox listBox1;
     }
 }

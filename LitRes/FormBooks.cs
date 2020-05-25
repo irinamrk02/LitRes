@@ -16,5 +16,11 @@ namespace LitRes
         {
             InitializeComponent();
         }
+
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+            Form formBuy = new FormBuy();
+            formBuy.Show();
+        }
     }
 }

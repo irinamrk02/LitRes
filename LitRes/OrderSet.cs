@@ -16,7 +16,7 @@ namespace LitRes
     {
         public int Id { get; set; }
         public int IdClient { get; set; }
-        public string Status { get; set; }
+        public Nullable<int> Status { get; set; }
     
         public virtual ClientSet ClientSet { get; set; }
     }

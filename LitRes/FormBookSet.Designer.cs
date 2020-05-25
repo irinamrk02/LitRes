@@ -41,18 +41,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxGenre = new System.Windows.Forms.ComboBox();
-            this.listViewClassic = new System.Windows.Forms.ListView();
+            this.listViewBooks = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewPsychology = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewFantastic = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,23 +178,24 @@
             this.comboBoxGenre.Size = new System.Drawing.Size(212, 32);
             this.comboBoxGenre.TabIndex = 19;
             // 
-            // listViewClassic
+            // listViewBooks
             // 
-            this.listViewClassic.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewBooks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
+            this.columnHeader4,
             this.columnHeader3});
-            this.listViewClassic.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listViewClassic.FullRowSelect = true;
-            this.listViewClassic.GridLines = true;
-            this.listViewClassic.HideSelection = false;
-            this.listViewClassic.Location = new System.Drawing.Point(270, 99);
-            this.listViewClassic.MultiSelect = false;
-            this.listViewClassic.Name = "listViewClassic";
-            this.listViewClassic.Size = new System.Drawing.Size(564, 279);
-            this.listViewClassic.TabIndex = 20;
-            this.listViewClassic.UseCompatibleStateImageBehavior = false;
-            this.listViewClassic.View = System.Windows.Forms.View.Details;
+            this.listViewBooks.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listViewBooks.FullRowSelect = true;
+            this.listViewBooks.GridLines = true;
+            this.listViewBooks.HideSelection = false;
+            this.listViewBooks.Location = new System.Drawing.Point(270, 99);
+            this.listViewBooks.MultiSelect = false;
+            this.listViewBooks.Name = "listViewBooks";
+            this.listViewBooks.Size = new System.Drawing.Size(564, 279);
+            this.listViewBooks.TabIndex = 20;
+            this.listViewBooks.UseCompatibleStateImageBehavior = false;
+            this.listViewBooks.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -213,76 +207,14 @@
             this.columnHeader2.Text = "Автор";
             this.columnHeader2.Width = 92;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Жанр";
+            this.columnHeader4.Width = 99;
+            // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Цена";
-            // 
-            // listViewPsychology
-            // 
-            this.listViewPsychology.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listViewPsychology.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listViewPsychology.FullRowSelect = true;
-            this.listViewPsychology.GridLines = true;
-            this.listViewPsychology.HideSelection = false;
-            this.listViewPsychology.Location = new System.Drawing.Point(270, 99);
-            this.listViewPsychology.MultiSelect = false;
-            this.listViewPsychology.Name = "listViewPsychology";
-            this.listViewPsychology.Size = new System.Drawing.Size(564, 279);
-            this.listViewPsychology.TabIndex = 21;
-            this.listViewPsychology.UseCompatibleStateImageBehavior = false;
-            this.listViewPsychology.View = System.Windows.Forms.View.Details;
-            this.listViewPsychology.Visible = false;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Название";
-            this.columnHeader4.Width = 134;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Автор";
-            this.columnHeader5.Width = 90;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Цена";
-            // 
-            // listViewFantastic
-            // 
-            this.listViewFantastic.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listViewFantastic.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listViewFantastic.FullRowSelect = true;
-            this.listViewFantastic.GridLines = true;
-            this.listViewFantastic.HideSelection = false;
-            this.listViewFantastic.Location = new System.Drawing.Point(270, 99);
-            this.listViewFantastic.MultiSelect = false;
-            this.listViewFantastic.Name = "listViewFantastic";
-            this.listViewFantastic.Size = new System.Drawing.Size(564, 279);
-            this.listViewFantastic.TabIndex = 22;
-            this.listViewFantastic.UseCompatibleStateImageBehavior = false;
-            this.listViewFantastic.View = System.Windows.Forms.View.Details;
-            this.listViewFantastic.Visible = false;
-            this.listViewFantastic.SelectedIndexChanged += new System.EventHandler(this.ListViewFantastic_SelectedIndexChanged);
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Название";
-            this.columnHeader7.Width = 134;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Автор";
-            this.columnHeader8.Width = 90;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Цена";
             // 
             // FormBookSet
             // 
@@ -290,9 +222,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(862, 473);
-            this.Controls.Add(this.listViewFantastic);
-            this.Controls.Add(this.listViewPsychology);
-            this.Controls.Add(this.listViewClassic);
+            this.Controls.Add(this.listViewBooks);
             this.Controls.Add(this.comboBoxGenre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -329,17 +259,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxGenre;
-        private System.Windows.Forms.ListView listViewClassic;
+        private System.Windows.Forms.ListView listViewBooks;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ListView listViewPsychology;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ListView listViewFantastic;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

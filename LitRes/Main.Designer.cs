@@ -46,7 +46,7 @@
             this.buttonClient.TabIndex = 1;
             this.buttonClient.Text = "Клиент";
             this.buttonClient.UseVisualStyleBackColor = false;
-            this.buttonClient.Click += new System.EventHandler(this.Button1_Click);
+            this.buttonClient.Click += new System.EventHandler(this.ButtonClient_Click);
             // 
             // buttonAmin
             // 

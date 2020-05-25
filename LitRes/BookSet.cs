@@ -24,7 +24,7 @@ namespace LitRes
         public string Title { get; set; }
         public string Author { get; set; }
         public int Price { get; set; }
-        public Nullable<int> Genre { get; set; }
+        public int Genre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientSet> ClientSet { get; set; }

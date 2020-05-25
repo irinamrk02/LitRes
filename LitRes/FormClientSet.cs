@@ -16,6 +16,7 @@ namespace LitRes
         {
             InitializeComponent();
             ShowClient();
+            ShowBook();
         }
 
         void ShowClient()
@@ -25,14 +26,24 @@ namespace LitRes
             {
                 ListViewItem item = new ListViewItem(new string[]
                 {
-                    clientSet.Id.ToString(), clientSet.FirstName,
-                    clientSet.MiddleName, clientSet.LastName,
-                    clientSet.Phone, clientSet.Email
+                    clientSet.Id.ToString(),clientSet.LastName,
+                    clientSet.FirstName,clientSet.MiddleName,
+                    clientSet.Phone, clientSet.Email,
+                    clientSet.BookSet.Title + " - " + clientSet.BookSet.Author
                 });
                 item.Tag = clientSet;
                 listViewClient.Items.Add(item);
             }
             listViewClient.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+        void ShowBook()
+        {
+            comboBoxBook.Items.Clear();
+            foreach (BookSet bookSet in Program.litRes.BookSet)
+            {
+                string[] item = { bookSet.Id.ToString() + ". ", bookSet.Title };
+                comboBoxBook.Items.Add(string.Join(" ", item));
+            }
         }
 
 
@@ -43,31 +54,77 @@ namespace LitRes
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            ClientSet clientSet = new ClientSet();
-            clientSet.FirstName = textBoxFirstName.Text;
-            clientSet.MiddleName = textBoxMiddleName.Text;
-            clientSet.LastName = textBoxLastName.Text;
-            clientSet.Phone = textBoxPhone.Text;
-            clientSet.Email = textBoxEmail.Text;
-            Program.litRes.ClientSet.Add(clientSet);
-            Program.litRes.SaveChanges();
-            ShowClient();
+            try
+            {
+                ClientSet clientSet = new ClientSet();
+
+                if (comboBoxBook.SelectedItem != null)
+                    clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
+                else throw new Exception("Обязательные данные не заполнены");
+
+                if (textBoxEmail.Text != "")
+                    clientSet.Email = textBoxEmail.Text;
+                else throw new Exception("Обязательные данные не заполнены");
+
+                if (textBoxLastName.Text == "" || textBoxFirstName.Text == "" ||
+                    textBoxPhone.Text == "")
+                {
+                    throw new Exception("Обязательные данные не заполнены");
+                }
+                else
+                {
+                    clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
+                    clientSet.LastName = textBoxLastName.Text;
+                    clientSet.FirstName = textBoxFirstName.Text;
+                    clientSet.Phone = textBoxPhone.Text;
+                    
+                }
+                Program.litRes.ClientSet.Add(clientSet);
+                Program.litRes.SaveChanges();
+                ShowClient();
+            }
+            catch (Exception ex) { MessageBox.Show("" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            
         }
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
 
-            if (listViewClient.SelectedItems.Count == 1)
+            try
             {
-                ClientSet clientSet = listViewClient.SelectedItems[0].Tag as ClientSet;
-                clientSet.FirstName = textBoxFirstName.Text;
-                clientSet.MiddleName = textBoxMiddleName.Text;
-                clientSet.LastName = textBoxLastName.Text;
-                clientSet.Phone = textBoxPhone.Text;
-                clientSet.Email = textBoxEmail.Text;
-                Program.litRes.SaveChanges();
-                ShowClient();
+                if (listViewClient.SelectedItems.Count == 1)
+                {
+                    ClientSet clientSet = new ClientSet();
+
+                    if (comboBoxBook.SelectedItem != null)
+                        clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
+                    else throw new Exception("Обязательные данные не заполнены");
+
+                    if (textBoxEmail.Text != "")
+                        clientSet.Email = textBoxEmail.Text;
+                    else throw new Exception("Обязательные данные не заполнены");
+
+                    if (textBoxLastName.Text == "" || textBoxFirstName.Text == "" ||
+                        textBoxPhone.Text == "")
+                    {
+                        throw new Exception("Обязательные данные не заполнены");
+                    }
+                    else
+                    {
+                        clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
+                        clientSet.LastName = textBoxLastName.Text;
+                        clientSet.FirstName = textBoxFirstName.Text;
+                        clientSet.Phone = textBoxPhone.Text;
+
+                    }
+                }
+
+                    Program.litRes.SaveChanges();
+                    ShowClient();
+                
             }
+            catch (Exception ex) { MessageBox.Show("" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
         }
 
         private void ListViewClient_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,19 +132,21 @@ namespace LitRes
             if (listViewClient.SelectedItems.Count == 1)
             {
                 ClientSet clientSet = listViewClient.SelectedItems[0].Tag as ClientSet;
+                textBoxLastName.Text = clientSet.LastName;
                 textBoxFirstName.Text = clientSet.FirstName;
                 textBoxMiddleName.Text = clientSet.MiddleName;
-                textBoxLastName.Text = clientSet.LastName;
                 textBoxPhone.Text = clientSet.Phone;
                 textBoxEmail.Text = clientSet.Email;
+                comboBoxBook.Text = clientSet.IdBook.ToString();
             }
             else
             {
+                textBoxLastName.Text = "";
                 textBoxFirstName.Text = "";
                 textBoxMiddleName.Text = "";
-                textBoxLastName.Text = "";
                 textBoxPhone.Text = "";
                 textBoxEmail.Text = "";
+                comboBoxBook.SelectedItem = null;
             }
         }
 
@@ -103,11 +162,12 @@ namespace LitRes
                     ShowClient();
                 }
 
+                textBoxLastName.Text = "";
                 textBoxFirstName.Text = "";
                 textBoxMiddleName.Text = "";
-                textBoxLastName.Text = "";
                 textBoxPhone.Text = "";
                 textBoxEmail.Text = "";
+                comboBoxBook.Text = "";
             }
             catch
             {
