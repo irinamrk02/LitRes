@@ -33,7 +33,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdClient" Type="int" Nullable="false" />
-          <Property Name="Status" Type="int" />
+          <Property Name="Status" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -117,7 +117,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdClient" Type="Int32" Nullable="false" />
-          <Property Name="Status" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ClientSet" Relationship="Self.FK_OrderSet_ClientSet" FromRole="OrderSet" ToRole="ClientSet" />
         </EntityType>
         <EntityType Name="Users">

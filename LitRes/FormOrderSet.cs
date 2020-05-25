@@ -16,7 +16,7 @@ namespace LitRes
         {
             InitializeComponent();
             ShowClients();
-            ShowOrderSet();
+            ShowOrder();
         }
 
         void ShowClients()
@@ -24,14 +24,14 @@ namespace LitRes
             comboBoxOrder.Items.Clear();
             foreach (ClientSet client in Program.litRes.ClientSet)
             {
-                string[] item = {client.Id.ToString(), client.LastName + " " 
+                string[] item = {client.Id.ToString() + ". ", client.LastName + " " 
                  + client.FirstName + " " + client.MiddleName,
-                 "Книга: " + client.IdBook.ToString() + ".", client.BookSet.Title };
+                 "Книга: " + client.IdBook.ToString() + ".", client.BookSet.Title};
                 comboBoxOrder.Items.Add(string.Join(" ", item));
             }
         }
 
-        void ShowOrderSet()
+       void ShowOrder()
         {
             listViewOrder.Items.Clear();
             foreach (OrderSet order in Program.litRes.OrderSet)
@@ -39,18 +39,14 @@ namespace LitRes
                 ListViewItem item = new ListViewItem(new string[]
                 {
                     order.Id.ToString(),
-                    order.IdClient.ToString() + ". ",
-                    order.ClientSet.LastName +
-                    order.ClientSet.FirstName.Remove(1) + "." +
-                    order.ClientSet.MiddleName.Remove(1) + ".",
-                    order.ClientSet.IdBook.ToString() + ".",
-                    order.ClientSet.BookSet.Title + " - " +
-                    order.ClientSet.BookSet.Author,
-                    order.Status.ToString()
+                    order.IdClient.ToString(),
+                    order.ClientSet.LastName + order.ClientSet.FirstName + order.ClientSet.MiddleName,
+                    order.ClientSet.IdBook.ToString(),
+                    order.ClientSet.BookSet.Title,
+                    order.Status
                 });
-                    item.Tag = order;
-                    listViewOrder.Items.Add(item);
-                
+                item.Tag = order;
+                listViewOrder.Items.Add(item);
             }
             listViewOrder.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
@@ -61,15 +57,13 @@ namespace LitRes
             {
                 OrderSet orderSet = listViewOrder.SelectedItems[0].Tag as OrderSet;
 
-                comboBoxOrder.Text = orderSet.IdClient.ToString() + ". " +
-                orderSet.ClientSet.LastName + " " + orderSet.ClientSet.FirstName + " - " +
-                orderSet.ClientSet.IdBook.ToString() + ". " + orderSet.ClientSet.BookSet.Title; 
+                comboBoxOrder.Text = orderSet.IdClient.ToString(); 
                 comboBoxStatus.Text = orderSet.Status.ToString();
             }
             else
             {
                 comboBoxOrder.SelectedItem = null;
-                comboBoxStatus.SelectedItem = null;
+               comboBoxStatus.SelectedItem = null;
             }
         }
 
@@ -84,13 +78,13 @@ namespace LitRes
                 else throw new Exception("Обязательные данные не заполнены");
 
                 if (comboBoxStatus.SelectedItem != null)
-                    order.Status = Convert.ToInt32(comboBoxStatus.SelectedItem.ToString());
+                    order.Status = comboBoxStatus.SelectedItem.ToString();
                 else order.Status = null;
 
                 
                 Program.litRes.OrderSet.Add(order);
                 Program.litRes.SaveChanges();
-                ShowOrderSet();
+                ShowOrder();
             }
             catch (Exception ex) { MessageBox.Show("" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }

@@ -35,6 +35,7 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.comboBoxOrder = new System.Windows.Forms.ComboBox();
             this.listViewOrder = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,7 +44,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +99,7 @@
             // 
             this.comboBoxOrder.Font = new System.Drawing.Font("Roboto Light", 12F);
             this.comboBoxOrder.FormattingEnabled = true;
-            this.comboBoxOrder.Location = new System.Drawing.Point(302, 45);
+            this.comboBoxOrder.Location = new System.Drawing.Point(302, 44);
             this.comboBoxOrder.Name = "comboBoxOrder";
             this.comboBoxOrder.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxOrder.Size = new System.Drawing.Size(445, 32);
@@ -122,11 +122,16 @@
             this.listViewOrder.Location = new System.Drawing.Point(12, 165);
             this.listViewOrder.MultiSelect = false;
             this.listViewOrder.Name = "listViewOrder";
-            this.listViewOrder.Size = new System.Drawing.Size(878, 210);
+            this.listViewOrder.Size = new System.Drawing.Size(878, 218);
             this.listViewOrder.TabIndex = 18;
             this.listViewOrder.UseCompatibleStateImageBehavior = false;
             this.listViewOrder.View = System.Windows.Forms.View.Details;
             this.listViewOrder.SelectedIndexChanged += new System.EventHandler(this.ListViewOrder_SelectedIndexChanged);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Заказ";
+            this.columnHeader6.Width = 71;
             // 
             // columnHeader1
             // 
@@ -158,7 +163,7 @@
             this.pictureBox1.Image = global::LitRes.Properties.Resources.litres_logo_rastr;
             this.pictureBox1.Location = new System.Drawing.Point(-6, -6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(286, 136);
+            this.pictureBox1.Size = new System.Drawing.Size(280, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -168,7 +173,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(298, 93);
+            this.label1.Location = new System.Drawing.Point(298, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 24);
             this.label1.TabIndex = 31;
@@ -181,23 +186,18 @@
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Оформлен",
             "В ожидании"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(302, 120);
+            this.comboBoxStatus.Location = new System.Drawing.Point(302, 111);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxStatus.Size = new System.Drawing.Size(160, 32);
             this.comboBoxStatus.TabIndex = 32;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Заказ";
-            this.columnHeader6.Width = 71;
             // 
             // FormOrderSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1183, 478);
+            this.ClientSize = new System.Drawing.Size(905, 478);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
