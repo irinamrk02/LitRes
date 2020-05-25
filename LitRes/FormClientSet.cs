@@ -137,7 +137,8 @@ namespace LitRes
                 textBoxMiddleName.Text = clientSet.MiddleName;
                 textBoxPhone.Text = clientSet.Phone;
                 textBoxEmail.Text = clientSet.Email;
-                comboBoxBook.Text = clientSet.IdBook.ToString();
+                comboBoxBook.Text = clientSet.IdBook.ToString() +"." 
+                    + clientSet.BookSet.Title + " - " + clientSet.BookSet.Author; 
             }
             else
             {

@@ -29,7 +29,7 @@ namespace LitRes
                 {
                     ListViewItem item = new ListViewItem(new string[]
                     {
-                        book.Title, book.Author, book.Genre.ToString("Классика"), book.Price.ToString()
+                        book.Id.ToString(), book.Title, book.Author, book.Genre.ToString("Классика"), book.Price.ToString()
                     });
                     item.Tag = book;
                     listViewBooks.Items.Add(item);
@@ -38,7 +38,7 @@ namespace LitRes
                 {
                     ListViewItem item = new ListViewItem(new string[]
                     {
-                        book.Title, book.Author, book.Genre.ToString("Психология"), book.Price.ToString()
+                       book.Id.ToString(), book.Title, book.Author, book.Genre.ToString("Психология"), book.Price.ToString()
                     });
                     item.Tag = book;
                     listViewBooks.Items.Add(item);
@@ -47,7 +47,7 @@ namespace LitRes
                 {
                     ListViewItem item = new ListViewItem(new string[]
                     {
-                        book.Title, book.Author, book.Genre.ToString("Фантастика"), book.Price.ToString()
+                       book.Id.ToString(), book.Title, book.Author, book.Genre.ToString("Фантастика"), book.Price.ToString()
                     });
                     item.Tag = book;
                     listViewBooks.Items.Add(item);

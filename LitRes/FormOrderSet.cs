@@ -57,8 +57,8 @@ namespace LitRes
             {
                 OrderSet orderSet = listViewOrder.SelectedItems[0].Tag as OrderSet;
 
-                comboBoxOrder.Text = orderSet.IdClient.ToString(); 
-                comboBoxStatus.Text = orderSet.Status.ToString();
+                comboBoxOrder.Text = orderSet.IdClient.ToString();
+                comboBoxStatus.Text = orderSet.Status;
             }
             else
             {
@@ -102,6 +102,50 @@ namespace LitRes
         private void ComboBoxOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listViewOrder.SelectedItems.Count == 1)
+                {
+                    OrderSet order = listViewOrder.SelectedItems[0].Tag as OrderSet;
+
+                    if (comboBoxOrder.SelectedItem != null)
+                        order.IdClient = Convert.ToInt32(comboBoxOrder.SelectedItem.ToString().Split('.')[0]);
+                    else throw new Exception("Обязательные данные не заполнены");
+
+                    if (comboBoxStatus.SelectedItem != null)
+                        order.Status = comboBoxStatus.SelectedItem.ToString();
+                    else order.Status = null;
+
+                    Program.litRes.SaveChanges();
+                    ShowOrder();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
+
+        private void ButtonDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listViewOrder.SelectedItems.Count == 1)
+                {
+                    OrderSet order = listViewOrder.SelectedItems[0].Tag as OrderSet;
+
+                    Program.litRes.OrderSet.Remove(order);
+                    Program.litRes.SaveChanges();
+                    ShowOrder();
+                }
+                comboBoxStatus.Text = "";
+                comboBoxOrder.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Невозможно удалить, эта запись используется!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+            }
         }
     }
 }

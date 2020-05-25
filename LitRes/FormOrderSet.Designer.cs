@@ -68,6 +68,7 @@
             this.buttonDel.TabIndex = 25;
             this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = false;
+            this.buttonDel.Click += new System.EventHandler(this.ButtonDel_Click);
             // 
             // buttonEdit
             // 
@@ -80,6 +81,7 @@
             this.buttonEdit.TabIndex = 24;
             this.buttonEdit.Text = "Изменить";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // buttonAdd
             // 
