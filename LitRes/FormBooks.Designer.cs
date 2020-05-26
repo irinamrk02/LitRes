@@ -123,15 +123,15 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "книга";
+            this.columnHeader2.Text = "Книга";
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "автор";
+            this.columnHeader3.Text = "Автор";
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "цена";
+            this.columnHeader4.Text = "Цена";
             // 
             // listViewBooksPsyhology
             // 
@@ -160,15 +160,15 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "книга";
+            this.columnHeader6.Text = "Книга";
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "автор";
+            this.columnHeader7.Text = "Автор";
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "цена";
+            this.columnHeader8.Text = "Цена";
             // 
             // listViewBooksFantasy
             // 
@@ -197,15 +197,15 @@
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "книга";
+            this.columnHeader10.Text = "Книга";
             // 
             // columnHeader11
             // 
-            this.columnHeader11.Text = "автор";
+            this.columnHeader11.Text = "Автор";
             // 
             // columnHeader12
             // 
-            this.columnHeader12.Text = "цена";
+            this.columnHeader12.Text = "Цена";
             // 
             // FormBooks
             // 
@@ -223,7 +223,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Книги";
+            this.Text = "Выбор книги";
             this.Load += new System.EventHandler(this.FormBooks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

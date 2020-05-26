@@ -41,7 +41,8 @@ namespace LitRes
             comboBoxBook.Items.Clear();
             foreach (BookSet bookSet in Program.litRes.BookSet)
             {
-                string[] item = { bookSet.Id.ToString() + ". ", bookSet.Title };
+                string[] item = { bookSet.Id.ToString() + ". ", bookSet.Title + " - " +
+                bookSet.Author};
                 comboBoxBook.Items.Add(string.Join(" ", item));
             }
         }
@@ -62,22 +63,20 @@ namespace LitRes
                     clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
                 else throw new Exception("Обязательные данные не заполнены");
 
-                if (textBoxEmail.Text != "")
-                    clientSet.Email = textBoxEmail.Text;
-                else throw new Exception("Обязательные данные не заполнены");
 
                 if (textBoxLastName.Text == "" || textBoxFirstName.Text == "" ||
-                    textBoxPhone.Text == "")
+                        textBoxMiddleName.Text == "" || textBoxPhone.Text == "" || textBoxEmail.Text == "")
                 {
                     throw new Exception("Обязательные данные не заполнены");
                 }
                 else
                 {
-                    clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
+                    
                     clientSet.LastName = textBoxLastName.Text;
                     clientSet.FirstName = textBoxFirstName.Text;
+                    clientSet.MiddleName = textBoxMiddleName.Text;
                     clientSet.Phone = textBoxPhone.Text;
-                    
+                    clientSet.Email = textBoxEmail.Text;
                 }
                 Program.litRes.ClientSet.Add(clientSet);
                 Program.litRes.SaveChanges();
@@ -92,29 +91,26 @@ namespace LitRes
 
             try
             {
+                
                 if (listViewClient.SelectedItems.Count == 1)
                 {
-                    ClientSet clientSet = new ClientSet();
-
+                    ClientSet clientSet = listViewClient.SelectedItems[0].Tag as ClientSet;
                     if (comboBoxBook.SelectedItem != null)
                         clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
                     else throw new Exception("Обязательные данные не заполнены");
 
-                    if (textBoxEmail.Text != "")
-                        clientSet.Email = textBoxEmail.Text;
-                    else throw new Exception("Обязательные данные не заполнены");
-
-                    if (textBoxLastName.Text == "" || textBoxFirstName.Text == "" ||
-                        textBoxPhone.Text == "")
+                    if (textBoxLastName.Text == "" || textBoxFirstName.Text == "" || 
+                        textBoxMiddleName.Text == "" || textBoxPhone.Text == "" || textBoxEmail.Text == "")
                     {
                         throw new Exception("Обязательные данные не заполнены");
                     }
                     else
                     {
-                        clientSet.IdBook = Convert.ToInt32(comboBoxBook.SelectedItem.ToString().Split('.')[0]);
                         clientSet.LastName = textBoxLastName.Text;
                         clientSet.FirstName = textBoxFirstName.Text;
+                        clientSet.MiddleName = textBoxMiddleName.Text;
                         clientSet.Phone = textBoxPhone.Text;
+                        clientSet.Email = textBoxEmail.Text;
 
                     }
                 }

@@ -39,5 +39,12 @@ namespace LitRes
             Form formOrder = new FormOrderSet();
             formOrder.Show();
         }
+
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
+            Form formMain = new Main();
+            formMain.Show();
+            this.Hide();
+        }
     }
 }

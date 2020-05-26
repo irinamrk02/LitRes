@@ -70,12 +70,14 @@ namespace LitRes
                 BookSet book = listViewBooks.SelectedItems[0].Tag as BookSet;
                 textBoxTitle.Text = book.Title;
                 textBoxAuthor.Text = book.Author;
+                comboBoxGenre.Text = book.Genre.ToString();
                 textBoxPrice.Text = book.Price.ToString();
             }
             else
             {
                 textBoxTitle.Text = "";
                 textBoxAuthor.Text = "";
+                comboBoxGenre.SelectedItem = null;
                 textBoxPrice.Text = "";
             }
         }
@@ -84,13 +86,13 @@ namespace LitRes
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            if (textBoxPrice.Text != "" && textBoxTitle.Text != "")
+            if ( textBoxTitle.Text != "" && textBoxAuthor.Text != "" && 
+                textBoxPrice.Text != "" && comboBoxGenre.SelectedItem != null)
             {
                 BookSet book = new BookSet();
 
                 book.Title = textBoxTitle.Text;
                 book.Author = textBoxAuthor.Text;
-                book.Price = Convert.ToInt32(textBoxPrice.Text);
 
                 if (comboBoxGenre.SelectedIndex == 0)
                 {
@@ -108,6 +110,8 @@ namespace LitRes
                     
                 }
 
+                book.Price = Convert.ToInt32(textBoxPrice.Text);
+
                 Program.litRes.BookSet.Add(book);
                 Program.litRes.SaveChanges();
                 ShowBookSet();
@@ -121,31 +125,37 @@ namespace LitRes
         {
             try
             {
-                if (textBoxTitle.Text != "" && textBoxPrice.Text != "")
+                if (listViewBooks.SelectedItems.Count == 1)
                 {
-                    throw new Exception("Заполните обязательные поля!");
-                }
+                    BookSet book = listViewBooks.SelectedItems[0].Tag as BookSet;
 
-                BookSet book = new BookSet();
-                book.Title = textBoxTitle.Text;
-                book.Author = textBoxAuthor.Text;
-                book.Price = Convert.ToInt32(textBoxPrice.Text);
+                    if (textBoxTitle.Text != "" && textBoxAuthor.Text != "" &&
+                    textBoxPrice.Text != "" && comboBoxGenre.SelectedItem != null)
+                    {
+                        throw new Exception("Заполните обязательные поля!");
+                    }
 
-                if (comboBoxGenre.SelectedIndex == 0)
-                {
-                    book.Genre = 0;
-                }
-                else if (comboBoxGenre.SelectedIndex == 1)
-                {
-                    book.Genre = 1;
-                }
-                else if (comboBoxGenre.SelectedIndex == 2)
-                {
-                    book.Genre = 2;
-                }
+                    book.Title = textBoxTitle.Text;
+                    book.Author = textBoxAuthor.Text;
 
-                Program.litRes.SaveChanges();
-                ShowBookSet();
+                    if (comboBoxGenre.SelectedIndex == 0)
+                    {
+                        book.Genre = 0;
+                    }
+                    else if (comboBoxGenre.SelectedIndex == 1)
+                    {
+                        book.Genre = 1;
+                    }
+                    else if (comboBoxGenre.SelectedIndex == 2)
+                    {
+                        book.Genre = 2;
+                    }
+
+                    book.Price = Convert.ToInt32(textBoxPrice.Text);
+
+                    Program.litRes.SaveChanges();
+                    ShowBookSet();
+                }
             }
             catch (Exception ex) { MessageBox.Show("" + ex.Message, "Внимание",
                 MessageBoxButtons.OK, MessageBoxIcon.Information); }

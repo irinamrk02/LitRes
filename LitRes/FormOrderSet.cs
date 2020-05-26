@@ -40,7 +40,7 @@ namespace LitRes
                 {
                     order.Id.ToString(),
                     order.IdClient.ToString(),
-                    order.ClientSet.LastName + order.ClientSet.FirstName + order.ClientSet.MiddleName,
+                    order.ClientSet.LastName + " " + order.ClientSet.FirstName + " " + order.ClientSet.MiddleName,
                     order.ClientSet.IdBook.ToString(),
                     order.ClientSet.BookSet.Title,
                     order.Status
@@ -57,7 +57,9 @@ namespace LitRes
             {
                 OrderSet orderSet = listViewOrder.SelectedItems[0].Tag as OrderSet;
 
-                comboBoxOrder.Text = orderSet.IdClient.ToString();
+                comboBoxOrder.Text = orderSet.IdClient.ToString() + " " + orderSet.ClientSet.LastName +
+                    " " + orderSet.ClientSet.FirstName + " " + orderSet.ClientSet.MiddleName + " " +
+                    orderSet.ClientSet.IdBook.ToString() + " " + orderSet.ClientSet.BookSet.Title;
                 comboBoxStatus.Text = orderSet.Status;
             }
             else

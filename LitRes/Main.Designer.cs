@@ -42,7 +42,7 @@
             this.buttonClient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonClient.Location = new System.Drawing.Point(12, 151);
             this.buttonClient.Name = "buttonClient";
-            this.buttonClient.Size = new System.Drawing.Size(390, 84);
+            this.buttonClient.Size = new System.Drawing.Size(360, 80);
             this.buttonClient.TabIndex = 1;
             this.buttonClient.Text = "Клиент";
             this.buttonClient.UseVisualStyleBackColor = false;
@@ -55,7 +55,7 @@
             this.buttonAmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonAmin.Location = new System.Drawing.Point(12, 248);
             this.buttonAmin.Name = "buttonAmin";
-            this.buttonAmin.Size = new System.Drawing.Size(390, 84);
+            this.buttonAmin.Size = new System.Drawing.Size(360, 80);
             this.buttonAmin.TabIndex = 2;
             this.buttonAmin.Text = "Администратор";
             this.buttonAmin.UseVisualStyleBackColor = false;
@@ -64,9 +64,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LitRes.Properties.Resources.litres_logo_rastr;
-            this.pictureBox1.Location = new System.Drawing.Point(-37, -13);
+            this.pictureBox1.Location = new System.Drawing.Point(-13, -13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(494, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(396, 175);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -76,7 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(418, 354);
+            this.ClientSize = new System.Drawing.Size(385, 345);
             this.Controls.Add(this.buttonAmin);
             this.Controls.Add(this.buttonClient);
             this.Controls.Add(this.pictureBox1);

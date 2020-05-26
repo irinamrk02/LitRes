@@ -53,9 +53,9 @@
             this.label4.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(298, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 24);
+            this.label4.Size = new System.Drawing.Size(161, 24);
             this.label4.TabIndex = 29;
-            this.label4.Text = "Клиент + книга";
+            this.label4.Text = "Клиент + книга *";
             // 
             // buttonDel
             // 
@@ -77,7 +77,7 @@
             this.buttonEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonEdit.Location = new System.Drawing.Point(548, 412);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(160, 50);
+            this.buttonEdit.Size = new System.Drawing.Size(160, 54);
             this.buttonEdit.TabIndex = 24;
             this.buttonEdit.Text = "Изменить";
             this.buttonEdit.UseVisualStyleBackColor = false;
@@ -89,9 +89,9 @@
             this.buttonAdd.BackColor = System.Drawing.Color.OrangeRed;
             this.buttonAdd.Font = new System.Drawing.Font("Roboto Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdd.Location = new System.Drawing.Point(12, 406);
+            this.buttonAdd.Location = new System.Drawing.Point(12, 412);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(160, 50);
+            this.buttonAdd.Size = new System.Drawing.Size(160, 54);
             this.buttonAdd.TabIndex = 23;
             this.buttonAdd.Text = "Создать";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -124,7 +124,7 @@
             this.listViewOrder.Location = new System.Drawing.Point(12, 165);
             this.listViewOrder.MultiSelect = false;
             this.listViewOrder.Name = "listViewOrder";
-            this.listViewOrder.Size = new System.Drawing.Size(878, 218);
+            this.listViewOrder.Size = new System.Drawing.Size(878, 233);
             this.listViewOrder.TabIndex = 18;
             this.listViewOrder.UseCompatibleStateImageBehavior = false;
             this.listViewOrder.View = System.Windows.Forms.View.Details;
@@ -163,7 +163,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LitRes.Properties.Resources.litres_logo_rastr;
-            this.pictureBox1.Location = new System.Drawing.Point(-6, -6);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(280, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,7 +186,7 @@
             this.comboBoxStatus.Font = new System.Drawing.Font("Roboto Light", 12F);
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Items.AddRange(new object[] {
-            "Оформлен",
+            "Отправлен",
             "В ожидании"});
             this.comboBoxStatus.Location = new System.Drawing.Point(302, 111);
             this.comboBoxStatus.Name = "comboBoxStatus";

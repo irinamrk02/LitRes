@@ -70,9 +70,11 @@ namespace LitRes
 
         private void ButtonBuy_Click(object sender, EventArgs e)
         {
-
+          
             Form formBuy = new FormBuy();
             formBuy.Show();
+            this.Hide();
+
         }
 
         private void ComboBoxGenre_SelectedIndexChanged(object sender, EventArgs e)

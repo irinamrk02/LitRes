@@ -39,7 +39,8 @@ namespace LitRes
 
                 
 
-                if (textBoxLastName.Text == "" || textBoxFirstName.Text == "" || textBoxPhone.Text == "" || textBoxEmail.Text == "")
+                if (textBoxLastName.Text == "" || textBoxFirstName.Text == "" || textBoxMiddleName.Text == "" 
+                   || textBoxPhone.Text == "" || textBoxEmail.Text == "")
                 {
                     throw new Exception("Обязательные данные не заполнены");
                 }
@@ -47,6 +48,7 @@ namespace LitRes
                 {
                     client.LastName = textBoxLastName.Text;
                     client.FirstName = textBoxFirstName.Text;
+                    client.MiddleName = textBoxMiddleName.Text;
                     client.Phone = textBoxPhone.Text;
                     client.Email = textBoxEmail.Text;
                 }
@@ -58,6 +60,13 @@ namespace LitRes
                 Program.litRes.SaveChanges();
             }
             catch (Exception ex) { MessageBox.Show("" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
+
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
+            Form formBooks = new FormBooks();
+            formBooks.Show();
+            this.Hide();
         }
     }
 }

@@ -21,12 +21,9 @@ namespace LitRes
 
         private void ButtonAmin_Click(object sender, EventArgs e)
         {
-            FormMenu menu = new FormMenu();
-            menu.Show();
-            
-            /*FormAuthorization authorization = new FormAuthorization();
+            FormAuthorization authorization = new FormAuthorization();
             authorization.Show();
-            this.Hide();*/
+            this.Hide();
         }
 
         private void ButtonClient_Click(object sender, EventArgs e)

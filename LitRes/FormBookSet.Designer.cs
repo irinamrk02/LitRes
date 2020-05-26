@@ -42,11 +42,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxGenre = new System.Windows.Forms.ComboBox();
             this.listViewBooks = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(160, 54);
             this.buttonAdd.TabIndex = 10;
-            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.Text = "Создать";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
@@ -121,9 +121,9 @@
             this.label1.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(8, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 24);
+            this.label1.Size = new System.Drawing.Size(112, 24);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Название";
+            this.label1.Text = "Название *";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
@@ -132,9 +132,9 @@
             this.label2.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(8, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 24);
+            this.label2.Size = new System.Drawing.Size(78, 24);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Автор";
+            this.label2.Text = "Автор *";
             // 
             // label3
             // 
@@ -142,9 +142,9 @@
             this.label3.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(8, 291);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 24);
+            this.label3.Size = new System.Drawing.Size(69, 24);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Цена";
+            this.label3.Text = "Цена *";
             // 
             // label4
             // 
@@ -152,9 +152,9 @@
             this.label4.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(266, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 24);
+            this.label4.Size = new System.Drawing.Size(74, 24);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Жанр";
+            this.label4.Text = "Жанр *";
             // 
             // pictureBox1
             // 
@@ -199,6 +199,10 @@
             this.listViewBooks.UseCompatibleStateImageBehavior = false;
             this.listViewBooks.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Id";
+            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Название";
@@ -217,10 +221,6 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Цена";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Id";
             // 
             // FormBookSet
             // 
