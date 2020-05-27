@@ -48,6 +48,7 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,7 +153,6 @@
             this.listViewBooksPsyhology.UseCompatibleStateImageBehavior = false;
             this.listViewBooksPsyhology.View = System.Windows.Forms.View.Details;
             this.listViewBooksPsyhology.Visible = false;
-            this.listViewBooksPsyhology.SelectedIndexChanged += new System.EventHandler(this.ListViewPsyhology_SelectedIndexChanged);
             // 
             // columnHeader5
             // 
@@ -189,7 +189,6 @@
             this.listViewBooksFantasy.UseCompatibleStateImageBehavior = false;
             this.listViewBooksFantasy.View = System.Windows.Forms.View.Details;
             this.listViewBooksFantasy.Visible = false;
-            this.listViewBooksFantasy.SelectedIndexChanged += new System.EventHandler(this.ListViewBooksFantasy_SelectedIndexChanged_1);
             // 
             // columnHeader9
             // 
@@ -207,12 +206,26 @@
             // 
             this.columnHeader12.Text = "Цена";
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.Color.OrangeRed;
+            this.buttonBack.Font = new System.Drawing.Font("Roboto Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonBack.Location = new System.Drawing.Point(0, -1);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(35, 38);
+            this.buttonBack.TabIndex = 54;
+            this.buttonBack.Text = "<";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.ButtonBack_Click);
+            // 
             // FormBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(445, 574);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.listViewBooksFantasy);
             this.Controls.Add(this.listViewBooksPsyhology);
             this.Controls.Add(this.listViewBooksClassic);
@@ -224,7 +237,6 @@
             this.Name = "FormBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выбор книги";
-            this.Load += new System.EventHandler(this.FormBooks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -252,5 +264,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

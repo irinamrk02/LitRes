@@ -63,11 +63,6 @@ namespace LitRes
             }
         }
 
-        private void FormBooks_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonBuy_Click(object sender, EventArgs e)
         {
           
@@ -102,25 +97,11 @@ namespace LitRes
             }
         }
 
-        private void ListViewBooksFantasy_SelectedIndexChanged(object sender, EventArgs e)
+        private void ButtonBack_Click(object sender, EventArgs e)
         {
-            
-            
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListViewPsyhology_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListViewBooksFantasy_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
+            Form formMain = new Main();
+            formMain.Show();
+            this.Hide();
         }
     }
     }

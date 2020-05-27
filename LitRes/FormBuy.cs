@@ -54,6 +54,8 @@ namespace LitRes
                 }
                 MessageBox.Show("Ваш заказ успешно офоромлен! Книга будет отправленна на почту", "Заказ оформлен",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form formMain = new Main();
+                formMain.Show();
                 this.Hide();
 
                 Program.litRes.ClientSet.Add(client);

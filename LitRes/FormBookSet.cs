@@ -55,10 +55,6 @@ namespace LitRes
                 listViewBooks.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ComboBoxGenre_SelectedIndexChanged(object sender, EventArgs e)
         { }
@@ -220,7 +216,7 @@ namespace LitRes
         private void TextBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8 && number != 44 && number != 45)
+            if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
             }

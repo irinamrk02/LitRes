@@ -219,7 +219,6 @@
             this.label5.Size = new System.Drawing.Size(110, 24);
             this.label5.TabIndex = 35;
             this.label5.Text = "Отчество *";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // textBoxPhone
             // 

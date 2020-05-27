@@ -48,11 +48,6 @@ namespace LitRes
         }
 
 
-        private void Label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
             try

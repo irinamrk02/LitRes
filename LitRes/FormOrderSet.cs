@@ -91,21 +91,6 @@ namespace LitRes
             catch (Exception ex) { MessageBox.Show("" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormOrderSet_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ComboBoxOrder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             try

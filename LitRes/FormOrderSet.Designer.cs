@@ -106,7 +106,6 @@
             this.comboBoxOrder.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxOrder.Size = new System.Drawing.Size(445, 32);
             this.comboBoxOrder.TabIndex = 22;
-            this.comboBoxOrder.SelectedIndexChanged += new System.EventHandler(this.ComboBoxOrder_SelectedIndexChanged);
             // 
             // listViewOrder
             // 
@@ -169,7 +168,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // label1
             // 
@@ -213,7 +211,6 @@
             this.Name = "FormOrderSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заказы";
-            this.Load += new System.EventHandler(this.FormOrderSet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,7 +30,7 @@ namespace LitRes
         {
             FormBooks genre = new FormBooks();
             genre.Show();
-            
+            this.Hide();
         }
     }
 }

@@ -17,11 +17,6 @@ namespace LitRes
             InitializeComponent();
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonBooks_Click(object sender, EventArgs e)
         {
             Form formBook = new FormBookSet();
